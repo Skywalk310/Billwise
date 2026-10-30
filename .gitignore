@@ -1,0 +1,11 @@
+*.keystore
+*.jks
+keystore.properties
+signing-credentials.txt
+local.properties
+*.apk
+*.aab
+/build
+app/build/
+.gradle/
+*.muse-github-snapshot-sync.json

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- BillWise premium palette: deep ink charcoal, champagne gold, ivory paper. -->
+    <color name="ink">#101418</color>
+    <color name="ink_soft">#23282F</color>
+    <color name="gold">#C6A664</color>
+    <color name="gold_dark">#A8894A</color>
+    <color name="ivory">#FAF7F2</color>
+    <color name="paper">#FFFFFF</color>
+    <color name="text_secondary">#5A5F66</color>
+    <color name="border">#E3DDD2</color>
+    <color name="paid_green">#2E7D4F</color>
+    <color name="unpaid_red">#9E3B32</color>
+</resources>

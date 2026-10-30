@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ivory"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_form_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_invoice"
+            android:textSize="22sp"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textColor="@color/ink" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Client"
+            android:textStyle="bold"
+            android:textColor="@color/ink"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/spinner_client"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_input"
+            android:padding="12dp" />
+
+        <LinearLayout
+            android:id="@+id/layout_onetime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/client_name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_client_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/phone">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_client_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="@string/address">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_client_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/invoice_date"
+                style="@style/Widget.BillWise.OutlinedButton" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/ink" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cb_due"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/due_date"
+            android:layout_marginTop="8dp" />
+
+        <LinearLayout
+            android:id="@+id/layout_due"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_due_date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Pick due date"
+                style="@style/Widget.BillWise.OutlinedButton" />
+
+            <TextView
+                android:id="@+id/tv_due_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/ink" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Items"
+            android:textStyle="bold"
+            android:textColor="@color/ink"
+            android:layout_marginTop="20dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lines_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:nestedScrollingEnabled="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Spinner
+                android:id="@+id/spinner_item_pick"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
+                android:padding="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_saved_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Add" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_custom_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Add custom item"
+            style="@style/Widget.BillWise.OutlinedButton" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/discount">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_discount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_gst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gst_toggle"
+            android:layout_marginTop="12dp" />
+
+        <RadioGroup
+            android:id="@+id/radio_gst_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioButton android:id="@+id/radio_0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" />
+            <RadioButton android:id="@+id/radio_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5%" />
+            <RadioButton android:id="@+id/radio_12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12%" />
+            <RadioButton android:id="@+id/radio_18" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="18%" android:checked="true" />
+            <RadioButton android:id="@+id/radio_28" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="28%" />
+            <RadioButton android:id="@+id/radio_custom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/custom_rate" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/layout_custom_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/custom_gst_hint">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_gst_custom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:text="%"
+                android:textSize="18sp"
+                android:textColor="@color/ink" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/remarks">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_remarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="2" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gold"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tv_subtotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/text_secondary" />
+
+        <TextView
+            android:id="@+id/tv_gst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary" />
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/ink"
+            android:layout_marginTop="4dp" />
+
+        <CheckBox
+            android:id="@+id/cb_paid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mark_paid"
+            android:layout_marginTop="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/save" />
+    </LinearLayout>
+</ScrollView>

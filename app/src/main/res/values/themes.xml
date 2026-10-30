@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BillWise" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/gold</item>
+        <item name="colorOnPrimary">@color/ink</item>
+        <item name="colorPrimaryContainer">#F0E6CF</item>
+        <item name="colorOnPrimaryContainer">@color/ink</item>
+        <item name="colorSecondary">@color/ink_soft</item>
+        <item name="colorSurface">@color/ivory</item>
+        <item name="colorOnSurface">@color/ink</item>
+        <item name="colorSurfaceVariant">@color/paper</item>
+        <item name="android:windowBackground">@color/ivory</item>
+        <item name="materialButtonStyle">@style/Widget.BillWise.Button</item>
+    </style>
+
+    <style name="Widget.BillWise.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/gold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="Widget.BillWise.OutlinedButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/gold_dark</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="Text.BillWise.Money" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textColor">@color/ink</item>
+    </style>
+</resources>
